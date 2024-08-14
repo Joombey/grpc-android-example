@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "exmaple.com/chat/proto";
+//option java_package = "dev.farukh.grpcchat";
+
+service Texting {
+    rpc SendText (Text) returns (Text);
+    rpc InitChat (stream Text) returns (stream Text);
+}
+
+message Text {
+    string text = 1;
+}
